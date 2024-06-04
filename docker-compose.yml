@@ -10,9 +10,9 @@ services:
       - "8987:8089"
     environment:
       SPRING_APPLICATION_JSON : '{
-      "spring.datasource.url" : "jdbc:mysql://mysqldb:3306/Achatdb?createDatabaseIfNotExist=true",
+      "spring.datasource.url" : "jdbc:mysql://mysqldb:3304/Achatdb?createDatabaseIfNotExist=true",
       "spring.datasource.username" : "root",
-      "spring.datasource.password" : null,
+      "spring.datasource.password" : root,
       "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
       "spring.jpa.hibernate.ddl-auto" : "update"
       }'
@@ -24,7 +24,7 @@ services:
     image: "mysql:5.7"
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=Achatdb
     ports:
       - 3306:3306
